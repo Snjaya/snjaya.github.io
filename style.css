@@ -20,7 +20,7 @@ section {
   background-color: #2c5f2d;
 }
 
-.btn {
+#send {
   background-color: #2c5f2d;
   color: white;
 }
@@ -31,4 +31,93 @@ footer {
 
 #player {
   background-color: #2c5f2d;
+}
+
+/* My Skill Section */
+.skill-box {
+  background-color: #2c5f2d;
+  position: relative;
+  border-radius: 10px;
+  height: 500px;
+  transform-style: preserve-3d;
+}
+
+.skill-box::before {
+  content: "MY";
+  position: absolute;
+  color: #e0ecff;
+  font-size: 6em;
+  font-weight: bold;
+  font-style: italic;
+  top: 10px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.skill-box:hover::before {
+  opacity: 0.2;
+}
+
+.skill-box::after {
+  content: "SKILLS";
+  position: absolute;
+  color: #e0ecff;
+  font-size: 5em;
+  font-weight: bold;
+  font-style: italic;
+  top: 330px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.skill-box:hover::after {
+  opacity: 0.2;
+}
+
+.skill-name {
+  top: 0;
+  width: 100%;
+  position: absolute;
+  color: #fff;
+  text-align: center;
+  font-size: 2em;
+  opacity: 0;
+  transform: translate3d(0, 0, 50px);
+  transition: 0.5s;
+}
+
+.skill-box:hover .skill-name {
+  top: 10px;
+  opacity: 1;
+}
+
+.skill-button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate3d(-50%, 0, 100px);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.skill-box:hover .skill-button {
+  opacity: 1;
+  bottom: 20px;
+}
+
+.skill-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 80px);
+  max-width: 250px;
+  transition: 0.5s;
+}
+
+.skill-box:hover .skill-img {
+  transform: translate3d(-50%, -50%, 80px) rotate(4deg) scale(1.2);
 }
