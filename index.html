@@ -55,10 +55,10 @@
     </section>
     <!-- akhir jumbotron -->
 
-    <!-- audio on -->
+    <!-- audio on 
     <div id="player" class="d-flex justify-content-center">
-      <button id="playAudio" class="btn">
-        <i class="bi bi-play fs-2">Play</i>
+      <button id="playAudio" class="btn btn-hover">
+        <i class="bi bi-play fs-6">Play The Sound</i>
         <audio id="hiddenAudio" loop>
           <source src="mp3/mountain.mp3" type="audio/mpeg" />
           Browser Anda tidak mendukung pemutar audio.
@@ -68,11 +68,23 @@
         document.getElementById("playAudio").addEventListener("click", function () {
           const audio = document.getElementById("hiddenAudio");
           audio.play();
-          this.style.display = "none"; // Sembunyikan tombol setelah audio dimulai
+          this.style.display = "none";
         });
       </script>
     </div>
-    <!-- audio end -->
+     audio end -->
+
+    <!-- tes -->
+    <div id="player" class="d-flex justify-content-center align-items-center">
+      <button id="toggleAudio" class="btn btn-hover">
+        <i class="bi bi-play fs-6" id="audioIcon"></i> <span id="audioText">Play The Sound</span>
+        <audio id="hiddenAudio" loop>
+          <source src="mp3/mountain.mp3" type="audio/mpeg" />
+          Browser Anda tidak mendukung pemutar audio.
+        </audio>
+      </button>
+    </div>
+    <!-- tes end -->
 
     <!-- about -->
     <section id="about">
@@ -244,6 +256,26 @@
       VanillaTilt.init(document.querySelectorAll(".skill-box"), {
         max: 25,
         speed: 400,
+      });
+    </script>
+
+    <!-- tes  -->
+    <script>
+      const toggleAudioButton = document.getElementById("toggleAudio");
+      const hiddenAudio = document.getElementById("hiddenAudio");
+      const audioIcon = document.getElementById("audioIcon");
+      const audioText = document.getElementById("audioText");
+
+      toggleAudioButton.addEventListener("click", function () {
+        if (hiddenAudio.paused) {
+          hiddenAudio.play();
+          audioIcon.classList.replace("bi-play", "bi-pause"); // Ganti ikon dari play ke pause
+          audioText.textContent = "Pause The Sound"; // Ubah teks tombol
+        } else {
+          hiddenAudio.pause();
+          audioIcon.classList.replace("bi-pause", "bi-play"); // Ganti ikon dari pause ke play
+          audioText.textContent = "Play The Sound"; // Ubah teks tombol
+        }
       });
     </script>
   </body>

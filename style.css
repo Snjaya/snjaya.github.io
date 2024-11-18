@@ -33,6 +33,24 @@ footer {
   background-color: #2c5f2d;
 }
 
+.btn-hover {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #2c5f2d;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease; /* Transisi untuk efek halus */
+}
+
+.btn-hover:hover {
+  background-color: #e0ecff;
+  transform: scale(1.05);
+}
+
 /* My Skill Section */
 .skill-box {
   background-color: #2c5f2d;
